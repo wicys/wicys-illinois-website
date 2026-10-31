@@ -14,10 +14,8 @@ export default function Events() {
       <div className="calendar-embed-wrap">
         <iframe
           className="calendar-embed"
-          src="https://calendar.google.com/calendar/embed?src=wicys.illinois%40gmail.com&ctz=America%2FChicago"
+          src="https://calendar.google.com/calendar/u/0/embed?src=wicys.illinois%40gmail.com&ctz=America%2FChicago"
           title="WiCyS Illinois events calendar"
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
         />
       </div>
       <p className="calendar-empty">Events are managed in the shared WiCyS calendar. <a className="text-link" href="https://calendar.google.com/calendar/u/0?cid=d2ljeXMuaWxsaW5vaXNAZ21haWwuY29t" target="_blank" rel="noreferrer">Open it in Google Calendar ↗</a></p>
