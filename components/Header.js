@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useState } from "react";
 
 const links = [
   ["About", "/#about"], ["Events", "/events"], ["Board", "/board"],
@@ -6,9 +7,11 @@ const links = [
 ];
 
 export default function Header() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return <header className="site-header"><div className="shell nav-wrap">
     <Link className="brand" href="/" aria-label="WiCyS Illinois home"><img src="/wicys_logo.svg" alt="" /><span>WiCyS Illinois</span></Link>
-    <nav aria-label="Main navigation">
+    <nav className="desktop-nav" aria-label="Main navigation">
       {links.map(([label, href]) => <Link key={label} href={href}>{label}</Link>)}
       <details className="join-menu">
         <summary className="button button-small">Join us <span aria-hidden="true">⌄</span></summary>
@@ -20,5 +23,29 @@ export default function Header() {
         </div>
       </details>
     </nav>
+    <div className="mobile-nav">
+      <button
+        className="mobile-nav-toggle"
+        type="button"
+        aria-expanded={mobileMenuOpen}
+        aria-controls="mobile-navigation"
+        onClick={() => setMobileMenuOpen((open) => !open)}
+      >
+        <span>{mobileMenuOpen ? "Close" : "Menu"}</span>
+        <span className="mobile-nav-icon" aria-hidden="true">{mobileMenuOpen ? "×" : "☰"}</span>
+      </button>
+      {mobileMenuOpen && <nav className="mobile-nav-panel" id="mobile-navigation" aria-label="Mobile navigation">
+        {links.map(([label, href]) => <Link key={label} href={href} onClick={() => setMobileMenuOpen(false)}>{label}</Link>)}
+        <details className="join-menu mobile-join-menu">
+          <summary className="button button-small">Join us <span aria-hidden="true">⌄</span></summary>
+          <div className="join-menu-links">
+            <a href="https://discord.gg/KQ2ewFv2NQ" target="_blank" rel="noreferrer" onClick={() => setMobileMenuOpen(false)}><span>Discord</span><b>Chat with the community ↗</b></a>
+            <a href="https://www.instagram.com/wicys.illinois/" target="_blank" rel="noreferrer" onClick={() => setMobileMenuOpen(false)}><span>Instagram</span><b>See events and updates ↗</b></a>
+            <a href="https://one.illinois.edu/WomenInCyberSecurityStudentChapter/club_signup" target="_blank" rel="noreferrer" onClick={() => setMobileMenuOpen(false)}><span>OneIllinois</span><b>Join the official organization ↗</b></a>
+            <a href="https://linktr.ee/wicys_illinois" target="_blank" rel="noreferrer" onClick={() => setMobileMenuOpen(false)}><span>Linktree</span><b>Find all WiCyS links ↗</b></a>
+          </div>
+        </details>
+      </nav>}
+    </div>
   </div></header>;
 }
