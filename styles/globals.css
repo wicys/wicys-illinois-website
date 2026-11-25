@@ -13,3 +13,9 @@
 .mobile-nav-toggle:focus-visible,.mobile-nav-panel a:focus-visible,.mobile-nav-panel summary:focus-visible{outline:3px solid rgba(118,40,135,.35);outline-offset:2px}
 .mobile-nav-icon{font-size:1.1rem;line-height:1}
 @media(max-width:800px){.desktop-nav{display:none}.mobile-nav{display:block;position:relative}.mobile-nav-panel{position:absolute;top:calc(100% + 12px);right:0;z-index:30;display:flex;flex-direction:column;align-items:stretch;gap:4px;width:min(340px,calc(100vw - 26px));max-height:calc(100dvh - 110px);overflow-y:auto;padding:12px;border:1px solid var(--line);border-radius:10px;background:#fff;box-shadow:0 22px 55px rgba(30,20,33,.16);font-size:.95rem}.mobile-nav-panel>a{display:block;padding:12px 13px;border-radius:7px}.mobile-nav-panel>a:hover{background:#f3eff4;color:var(--purple)}.mobile-nav-panel .join-menu{width:100%}.mobile-nav-panel .join-menu summary{display:flex;justify-content:space-between;width:100%;margin-top:4px}.mobile-nav-panel .join-menu-links{position:static;width:auto;margin-top:8px;padding:0;border:0;box-shadow:none}.mobile-nav-panel .join-menu-links a{padding:10px 13px}}
+.footer-logo{width:200px;margin:0}
+.resource-card h2{margin-top:0}
+.calendar-heading-actions{display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.calendar-subscribe{font-size:.86rem}
+@media(max-width:800px){.event-card img{height:auto;min-height:0;aspect-ratio:16/10;object-fit:cover}}
+@media(max-width:520px){.footer-logo{width:180px}.footer-links{width:100%;align-items:center;justify-content:center;flex-direction:row;flex-wrap:wrap;gap:14px;font-size:.82rem}.actions.centered{width:100%;align-items:center}.calendar-heading-actions{width:100%;align-items:flex-start}.calendar-subscribe{padding:4px 0}.resource-suggestions{padding-top:25px}}

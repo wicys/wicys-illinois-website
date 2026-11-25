@@ -55,10 +55,13 @@ export default function Events() {
     <section className="section shell calendar-section" aria-labelledby="events-calendar-title">
       <div className="calendar-heading">
         <div><p className="eyebrow">WiCyS calendar</p><h2 id="events-calendar-title">Events calendar</h2></div>
-        <div className="calendar-controls" aria-label="Calendar month navigation">
-          <button type="button" onClick={() => changeMonth(-1)} aria-label="Previous month">‹</button>
-          <span aria-live="polite">{monthName}</span>
-          <button type="button" onClick={() => changeMonth(1)} aria-label="Next month">›</button>
+        <div className="calendar-heading-actions">
+          <div className="calendar-controls" aria-label="Calendar month navigation">
+            <button type="button" onClick={() => changeMonth(-1)} aria-label="Previous month">‹</button>
+            <span aria-live="polite">{monthName}</span>
+            <button type="button" onClick={() => changeMonth(1)} aria-label="Next month">›</button>
+          </div>
+          <a className="text-link calendar-subscribe" href="https://calendar.google.com/calendar/u/0?cid=d2ljeXMuaWxsaW5vaXNAZ21haWwuY29t" target="_blank" rel="noreferrer">Add WiCyS calendar to Google Calendar</a>
         </div>
       </div>
       <table className="calendar-grid">
@@ -79,6 +82,6 @@ export default function Events() {
       {(calendarStatus === "loading" || calendarStatus === "error" || (calendarStatus === "ready" && calendarEvents.length === 0)) && <p className="calendar-empty" aria-live="polite">{calendarStatus === "loading" ? "Loading events…" : calendarStatus === "error" ? "The WiCyS calendar is temporarily unavailable. Please check back soon." : "No events are listed for this month."}</p>}
     </section>
     <section className="section shell event-list">{events.map((event, index) => <article className="event-card" key={event.title}><img src={event.image} alt="" /><div><span>0{index + 1}</span><h2>{event.title}</h2><p>{event.description}</p></div></article>)}</section>
-    <section className="section shell center"><h2>Want the next event?</h2><p>Dates and room details are posted on Discord and Instagram.</p><div className="actions centered"><a className="button" href="https://discord.gg/KQ2ewFv2NQ" target="_blank" rel="noreferrer">Open Discord</a><a className="text-link" href="https://www.instagram.com/wicys.illinois/" target="_blank" rel="noreferrer">View Instagram →</a></div></section>
+    <section className="section shell center"><h2>Want the next event?</h2><p>Dates and room details are posted on Discord and Instagram.</p><div className="actions centered"><a className="button" href="https://discord.gg/KQ2ewFv2NQ" target="_blank" rel="noreferrer">Open Discord</a><a className="text-link" href="https://www.instagram.com/wicys.illinois/" target="_blank" rel="noreferrer">View Instagram</a></div></section>
   </Layout>;
 }

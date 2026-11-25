@@ -31,9 +31,9 @@ export default function Eoh() {
       </div>
       <div className="eoh-terminal" aria-hidden="true">
         <p><span>$</span> encode "HELLO"</p>
-        <p className="eoh-output">input keys → rotor</p>
-        <p className="eoh-output">rotor → reflector</p>
-        <p className="eoh-output">reflector → output LEDs</p>
+        <p className="eoh-output">input keys -&gt; rotor</p>
+        <p className="eoh-output">rotor -&gt; reflector</p>
+        <p className="eoh-output">reflector -&gt; output LEDs</p>
         <p><span>$</span> cipher ready<span className="cursor">▌</span></p>
       </div>
     </section>
@@ -67,12 +67,12 @@ export default function Eoh() {
 
         <div className="eoh-gallery" aria-label="Photos from the 2026 Enigma machine project">
           <figure>
-            <img src="/eoh-2026/eoh-2026-build.jpg" alt="WiCyS members assembling the Enigma machine's breadboard and electronic components." />
-            <figcaption>Building and wiring the machine together.</figcaption>
+            <img src="/eoh-2026/eoh-2026-build.jpg" alt="Members test the internal wiring for the rotors and the connections between multiple rotors." />
+            <figcaption>Testing the internal rotor wiring and connections between rotors.</figcaption>
           </figure>
           <figure>
-            <img src="/eoh-2026/eoh-2026-wiring.jpg" alt="A close view of members connecting the wooden rotor assembly to the breadboard circuit." />
-            <figcaption>Connecting the physical rotors to the circuit.</figcaption>
+            <img src="/eoh-2026/eoh-2026-wiring.jpg" alt="Members test connections between the reflector and the breadboard's button inputs and LED outputs." />
+            <figcaption>Testing connections between the reflector and breadboard inputs and LEDs.</figcaption>
           </figure>
           <figure>
             <img src="/eoh-2026/eoh-2026-exhibit.jpg" alt="WiCyS members presenting their Enigma machine exhibit at Engineering Open House." />
@@ -88,7 +88,7 @@ export default function Eoh() {
         <h2>Play past EOH games</h2>
         <div className="eoh-grid">
           {pastGames.map((game) => <a className="eoh-card" href={game.href} target="_blank" rel="noreferrer" key={game.year}>
-            <span>{game.year}</span><h3>{game.title}</h3><p>{game.description}</p><b>Launch game ↗</b>
+            <span>{game.year}</span><h3>{game.title}</h3><p>{game.description}</p><b>Launch game</b>
           </a>)}
         </div>
         <p className="archive-note">These projects are preserved from the original WiCyS Illinois website. Some features may work best on a desktop browser.</p>
